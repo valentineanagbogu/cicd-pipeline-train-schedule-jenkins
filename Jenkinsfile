@@ -1,10 +1,8 @@
-properties([pipelineTriggers([githubPush()])])
-
-node {
-        git url: 'https://github.com/valentineanagbogu/cicd-pipeline-train-schedule-jenkins.git',branch: 'master'
-
 pipeline {
   agent any
+  properties([pipelineTriggers([githubPush()])])
+        node {
+        git url: 'https://github.com/valentineanagbogu/cicd-pipeline-train-schedule-jenkins.git',branch: 'master'
   stages {
     stage ('Build') {
       steps {
